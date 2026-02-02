@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bluecrest Int'l High School Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="top-header">
+        <div class="logo-section">
+            <img src="images/logo.png" alt="School Logo">
+            <span class="motto">Knowledge is Power</span>
+        </div>
+
+        <h1>
+            BLUECREST INT'L HIGH SCHOOL<br>
+            ATTENDANCE SYSTEM
+        </h1>
+
+        <div class="teacher-info">
+            <p id="teacherDisplay"></p>
+            <button id="logoutBtn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- CLASS & DATE -->
+    <div class="controls">
+        <label>Select Class:</label>
+        <select id="classSelect" onchange="loadClass()">
+            <option value="">-- Select Class --</option>
+            <option value="JSS1A">JSS1A</option>
+            <option value="JSS1B">JSS1B</option>
+            <option value="JSS2A">JSS2A</option>
+            <option value="JSS2B">JSS2B</option>
+            <option value="JSS3A">JSS3A</option>
+            <option value="JSS3B">JSS3B</option>
+            <option value="SS1">SS1</option>
+            <option value="SS2">SS2</option>
+            <option value="SS3">SS3</option>
+        </select>
+
+        <label>Select Date:</label>
+        <input type="date" id="dateSelect" onchange="changeDate()">
+    </div>
+
+    <!-- ADD STUDENT -->
+    <div class="add-student">
+        <input type="text" id="studentInput" placeholder="Enter student name">
+        <button onclick="addStudent()">Add Student</button>
+    </div>
+
+    <!-- ATTENDANCE TABLE -->
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Student Name</th>
+                <th>Morning</th>
+                <th>Afternoon</th>
+                <th>Edit Name</th>            </tr>
+        </thead>
+        <tbody id="attendanceTable"></tbody>
+    </table>
+
+    <!-- DAILY SUMMARY -->
+    <div class="summary">
+        <p id="morningSummary"></p>
+        <p id="afternoonSummary"></p>
+    </div>
+
+    <!-- WEEKLY PERCENTAGE -->
+    <div class="weekly">
+        <button onclick="calculateWeeklyPercentage()">
+            Calculate Weekly Attendance Percentage
+        </button>
+        <p id="weeklyPercentage"></p>
+    </div>
+
+    <!-- WEEKLY REPORT -->
+    <div class="weekly-report">
+        <h3>Weekly Attendance Report</h3>
+        <button onclick="generateWeeklyReport()">Generate Weekly Report</button>
+        <div id="weeklyReport"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
